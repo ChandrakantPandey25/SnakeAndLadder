@@ -13,6 +13,7 @@ namespace SnakeLadder
             Console.WriteLine("Enter 3 to run program till win position");
             Console.WriteLine("Enter 4 to run program till exact win position");
             Console.WriteLine("Enter 5 to run program to find number of time dice is rolled");
+            Console.WriteLine("Enter 6 to run program for two players");
            
             int result = Convert.ToInt32(Console.ReadLine());
             switch(result)
@@ -34,6 +35,9 @@ namespace SnakeLadder
                     break;
                 case 5:
                     NumberOfTimeDieRolled NumDieRoll = new NumberOfTimeDieRolled();
+                    break;
+                case 6:
+                    TwoPlayer Winner = new TwoPlayer();
                     break;
 
                 default:
