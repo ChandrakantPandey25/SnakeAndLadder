@@ -8,6 +8,7 @@ namespace SnakeLadder
     {
         public TillWinPosition()
         {
+<<<<<<< HEAD
             int rollTime = 0;
             
 
@@ -22,6 +23,22 @@ namespace SnakeLadder
                 Random random = new Random();
                 int option = random.Next(1, 4);
 
+=======
+
+
+
+            int newPosition = 0;
+            Console.WriteLine("Your new Position is " + newPosition);
+            while (newPosition < 100)
+            {
+                
+                RollDie roll = new RollDie();
+                int newValue = roll.RollDieResult();
+                Console.WriteLine("The new Die Value is:" + newValue);
+                Random random = new Random();
+                int option = random.Next(1, 4);
+
+>>>>>>> TillExactWinPosition
                 switch (option)
                 {
                     case 1:
