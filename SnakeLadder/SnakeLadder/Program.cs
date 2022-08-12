@@ -11,6 +11,7 @@ namespace SnakeLadder
             Console.WriteLine("Enter 1 to roll die");
             Console.WriteLine("Enter 2 to CheckOptions");
             Console.WriteLine("Enter 3 to run program till win position");
+            Console.WriteLine("Enter 4 to run program till exact win position");
            
             int result = Convert.ToInt32(Console.ReadLine());
             switch(result)
@@ -27,7 +28,10 @@ namespace SnakeLadder
                 case 3:
                     TillWinPosition final = new TillWinPosition();
                     break;
-                
+                case 4:
+                    TillExactWinPosition finalwin = new TillExactWinPosition();
+                    break;
+
                 default:
                     Console.WriteLine("Enter valid number");
                     break;
