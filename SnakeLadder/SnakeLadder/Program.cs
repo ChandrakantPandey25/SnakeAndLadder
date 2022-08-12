@@ -8,10 +8,11 @@ namespace SnakeLadder
         {
             Console.WriteLine("Welcome to Snake and Ladder program");
             StartPosition Start = new StartPosition();
-            Console.WriteLine("Enter 1 to roll die");
+            Console.WriteLine("Enter 1 to roll dice");
             Console.WriteLine("Enter 2 to CheckOptions");
             Console.WriteLine("Enter 3 to run program till win position");
             Console.WriteLine("Enter 4 to run program till exact win position");
+            Console.WriteLine("Enter 5 to run program to find number of time dice is rolled");
            
             int result = Convert.ToInt32(Console.ReadLine());
             switch(result)
@@ -30,6 +31,9 @@ namespace SnakeLadder
                     break;
                 case 4:
                     TillExactWinPosition finalwin = new TillExactWinPosition();
+                    break;
+                case 5:
+                    NumberOfTimeDieRolled NumDieRoll = new NumberOfTimeDieRolled();
                     break;
 
                 default:
