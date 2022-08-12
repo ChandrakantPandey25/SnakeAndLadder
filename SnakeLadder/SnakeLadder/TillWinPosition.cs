@@ -8,33 +8,31 @@ namespace SnakeLadder
     {
         public TillWinPosition()
         {
-            int rollTime = 0;
-            RollDie roll = new RollDie();
-            int newValue = roll.RollDieResult();
 
 
-            int newPosition = 0 + newValue;
+
+            int newPosition = 0;
             Console.WriteLine("Your new Position is " + newPosition);
             while (newPosition < 100)
             {
                 
-                RollDie roll1 = new RollDie();
-                int newValue1 = roll1.RollDieResult();
-                Console.WriteLine("The new Die Value is:" + newValue1);
-                Random random1 = new Random();
-                int option1 = random1.Next(1, 4);
+                RollDie roll = new RollDie();
+                int newValue = roll.RollDieResult();
+                Console.WriteLine("The new Die Value is:" + newValue);
+                Random random = new Random();
+                int option = random.Next(1, 4);
 
-                switch (option1)
+                switch (option)
                 {
                     case 1:
                         Console.WriteLine("no play");
                         break;
                     case 2:
                         Console.WriteLine("you got a ladder");
-                        newPosition = newPosition + newValue1;
+                        newPosition = newPosition + newValue;
                         if (newPosition > 100)
                         {
-                            newPosition = newPosition - newValue1;
+                            newPosition = newPosition - newValue;
                             Console.WriteLine("your new position is:" + newPosition);
 
                         }
@@ -45,7 +43,7 @@ namespace SnakeLadder
                         break;
                     case 3:
                         Console.WriteLine("you got a snake");
-                        newPosition = newPosition - newValue1;
+                        newPosition = newPosition - newValue;
                         if (newPosition < 0)
                         {
                             newPosition = 0;
