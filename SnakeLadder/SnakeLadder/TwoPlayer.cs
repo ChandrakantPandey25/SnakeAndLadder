@@ -9,7 +9,7 @@ namespace SnakeLadder
         public TwoPlayer()
         {
             int firstPlayerPosition = 0;
-            int secondPlayerPosition = 1;
+            int secondPlayerPosition = 0;
             int numTimeFirstPlayerDiceRolled = 0;
             int numTimeSecondPlayerDiceRolled = 0;
 
@@ -26,13 +26,13 @@ namespace SnakeLadder
                         RollDie roll = new RollDie();
                         int newValue = roll.RollDieResult();
 
+                        numTimeFirstPlayerDiceRolled++;
 
 
+                        Random randomOne = new Random();
+                        int optionOne = randomOne.Next(1, 4);
 
-                        Random random1 = new Random();
-                        int option1 = random1.Next(1, 4);
-
-                        switch (option1)
+                        switch (optionOne)
                         {
                             case 1:
                                 Console.WriteLine("no play");
@@ -50,18 +50,19 @@ namespace SnakeLadder
                                 {
                                     Console.WriteLine("your new position is:" + firstPlayerPosition);
                                 }
-                                int option2 = 2;
-                                while (option2 == 2)
+                                int optionTwo = 2;
+                                while (optionTwo == 2)
                                 {
-                                    RollDie roll1 = new RollDie();
-                                    int newValue1 = roll1.RollDieResult();
-                                    Random random2 = new Random();
-                                    option2 = random2.Next(1, 4);
+                                    RollDie rollOne = new RollDie();
+                                    int newValueOne = rollOne.RollDieResult();
+                                    numTimeFirstPlayerDiceRolled++;
+                                    Random randomTwo = new Random();
+                                    optionTwo = randomTwo.Next(1, 4);
                                     Console.WriteLine("you got a ladder");
-                                    firstPlayerPosition = firstPlayerPosition + newValue1;
+                                    firstPlayerPosition = firstPlayerPosition + newValueOne;
                                     if (firstPlayerPosition > 100)
                                     {
-                                        firstPlayerPosition = firstPlayerPosition - newValue1;
+                                        firstPlayerPosition = firstPlayerPosition - newValueOne;
                                         Console.WriteLine("your new position is:" + firstPlayerPosition);
 
                                     }
@@ -86,31 +87,32 @@ namespace SnakeLadder
                                     Console.WriteLine("your new position is:" + firstPlayerPosition);
                                 }
                                 break;
-                                numTimeFirstPlayerDiceRolled++;
+                                
                                 
 
                                 Console.WriteLine("Turn of Second Player");
 
-                                RollDie roll2 = new RollDie();
-                                int newValue2 = roll2.RollDieResult();
+                                RollDie rollTwo = new RollDie();
+                                int newValueTwo = rollTwo.RollDieResult();
+                                numTimeSecondPlayerDiceRolled++;
 
 
 
 
-                                Random random3 = new Random();
-                                int option3 = random3.Next(1, 4);
+                                Random randomThree = new Random();
+                                int optionThree = randomThree.Next(1, 4);
 
-                                switch (option3)
+                                switch (optionThree)
                                 {
                                     case 1:
                                         Console.WriteLine("no play");
                                         break;
                                     case 2:
                                         Console.WriteLine("you got a ladder");
-                                        secondPlayerPosition = secondPlayerPosition + newValue2;
+                                        secondPlayerPosition = secondPlayerPosition + newValueTwo;
                                         if (secondPlayerPosition > 100)
                                         {
-                                            secondPlayerPosition = secondPlayerPosition - newValue2;
+                                            secondPlayerPosition = secondPlayerPosition - newValueTwo;
                                             Console.WriteLine("your new position is:" + secondPlayerPosition);
 
                                         }
@@ -118,18 +120,19 @@ namespace SnakeLadder
                                         {
                                             Console.WriteLine("your new position is:" + secondPlayerPosition);
                                         }
-                                        int option4 = 2;
-                                        while (option4 == 2)
+                                        int optionFour = 2;
+                                        while (optionFour == 2)
                                         {
-                                            RollDie roll1 = new RollDie();
-                                            int newValue3 = roll1.RollDieResult();
-                                            Random random2 = new Random();
-                                            option4 = random2.Next(1, 4);
+                                            RollDie rollThree = new RollDie();
+                                            int newValueThree = rollThree.RollDieResult();
+                                            numTimeSecondPlayerDiceRolled++;
+                                            Random randomFour = new Random();
+                                            optionFour = randomFour.Next(1, 4);
                                             Console.WriteLine("you got a ladder");
-                                            secondPlayerPosition = secondPlayerPosition + newValue3;
+                                            secondPlayerPosition = secondPlayerPosition + newValueThree;
                                             if (secondPlayerPosition > 100)
                                             {
-                                                secondPlayerPosition = secondPlayerPosition - newValue3;
+                                                secondPlayerPosition = secondPlayerPosition - newValueThree;
                                                 Console.WriteLine("your new position is:" + secondPlayerPosition);
 
                                             }
@@ -143,7 +146,7 @@ namespace SnakeLadder
                                         break;
                                     case 3:
                                         Console.WriteLine("you got a snake");
-                                        secondPlayerPosition = secondPlayerPosition - newValue2;
+                                        secondPlayerPosition = secondPlayerPosition - newValueTwo;
                                         if (secondPlayerPosition < 0)
                                         {
                                             secondPlayerPosition = 0;
@@ -155,7 +158,7 @@ namespace SnakeLadder
                                         }
                                         break;
 
-                                        numTimeSecondPlayerDiceRolled++;
+                                        
                                 }
 
 
@@ -175,20 +178,20 @@ namespace SnakeLadder
                     }
                     break;
 
-                    case1:
+                    case 1:
                     Console.WriteLine("Second player will start the game");
                     while (firstPlayerPosition < 100 && secondPlayerPosition <  100)
                     {
                         RollDie roll = new RollDie();
                         int newValue = roll.RollDieResult();
+                        numTimeSecondPlayerDiceRolled++;
 
 
 
+                        Random randomOne = new Random();
+                        int optionOne = randomOne.Next(1, 4);
 
-                        Random random1 = new Random();
-                        int option1 = random1.Next(1, 4);
-
-                        switch (option1)
+                        switch (optionOne)
                         {
                             case 1:
                                 Console.WriteLine("no play");
@@ -206,18 +209,19 @@ namespace SnakeLadder
                                 {
                                     Console.WriteLine("your new position is:" + secondPlayerPosition);
                                 }
-                                int option2 = 2;
-                                while (option2 == 2)
+                                int optionTwo = 2;
+                                while (optionTwo == 2)
                                 {
-                                    RollDie roll1 = new RollDie();
-                                    int newValue1 = roll1.RollDieResult();
-                                    Random random2 = new Random();
-                                    option2 = random2.Next(1, 4);
+                                    RollDie rollOne = new RollDie();
+                                    int newValueOne = rollOne.RollDieResult();
+                                    numTimeSecondPlayerDiceRolled++;
+                                    Random randomTwo = new Random();
+                                    optionTwo = randomTwo.Next(1, 4);
                                     Console.WriteLine("you got a ladder");
-                                    secondPlayerPosition = secondPlayerPosition + newValue1;
+                                    secondPlayerPosition = secondPlayerPosition + newValueOne;
                                     if (secondPlayerPosition > 100)
                                     {
-                                        secondPlayerPosition = secondPlayerPosition - newValue1;
+                                        secondPlayerPosition = secondPlayerPosition - newValueOne;
                                         Console.WriteLine("your new position is:" + secondPlayerPosition);
 
                                     }
@@ -242,31 +246,31 @@ namespace SnakeLadder
                                     Console.WriteLine("your new position is:" + secondPlayerPosition);
                                 }
                                 break;
-                                numTimeSecondPlayerDiceRolled++;
+                                
 
 
                                 Console.WriteLine("Turn of First Player");
 
-                                RollDie roll2 = new RollDie();
-                                int newValue2 = roll2.RollDieResult();
+                                RollDie rollTwo = new RollDie();
+                                int newValueTwo = rollTwo.RollDieResult();
+                                numTimeFirstPlayerDiceRolled++;
 
 
 
+                                Random randomThree = new Random();
+                                int optionThree = randomThree.Next(1, 4);
 
-                                Random random3 = new Random();
-                                int option3 = random3.Next(1, 4);
-
-                                switch (option3)
+                                switch (optionThree)
                                 {
                                     case 1:
                                         Console.WriteLine("no play");
                                         break;
                                     case 2:
                                         Console.WriteLine("you got a ladder");
-                                        firstPlayerPosition = firstPlayerPosition + newValue2;
+                                        firstPlayerPosition = firstPlayerPosition + newValueTwo;
                                         if (firstPlayerPosition > 100)
                                         {
-                                            firstPlayerPosition = firstPlayerPosition - newValue2;
+                                            firstPlayerPosition = firstPlayerPosition - newValueTwo;
                                             Console.WriteLine("your new position is:" + firstPlayerPosition);
 
                                         }
@@ -274,18 +278,19 @@ namespace SnakeLadder
                                         {
                                             Console.WriteLine("your new position is:" + firstPlayerPosition);
                                         }
-                                        int option4 = 2;
-                                        while (option4 == 2)
+                                        int optionFour = 2;
+                                        while (optionFour == 2)
                                         {
-                                            RollDie roll1 = new RollDie();
-                                            int newValue3 = roll1.RollDieResult();
-                                            Random random2 = new Random();
-                                            option4 = random2.Next(1, 4);
+                                            RollDie rollThree = new RollDie();
+                                            int newValueThree = rollThree.RollDieResult();
+                                            numTimeFirstPlayerDiceRolled++;
+                                            Random randomFour = new Random();
+                                            optionFour = randomFour.Next(1, 4);
                                             Console.WriteLine("you got a ladder");
-                                            firstPlayerPosition = firstPlayerPosition + newValue3;
+                                            firstPlayerPosition = firstPlayerPosition + newValueThree;
                                             if (firstPlayerPosition > 100)
                                             {
-                                                firstPlayerPosition = firstPlayerPosition - newValue3;
+                                                firstPlayerPosition = firstPlayerPosition - newValueThree;
                                                 Console.WriteLine("your new position is:" + firstPlayerPosition);
 
                                             }
@@ -299,7 +304,7 @@ namespace SnakeLadder
                                         break;
                                     case 3:
                                         Console.WriteLine("you got a snake");
-                                        firstPlayerPosition = firstPlayerPosition - newValue2;
+                                        firstPlayerPosition = firstPlayerPosition - newValueTwo;
                                         if (firstPlayerPosition < 0)
                                         {
                                             firstPlayerPosition = 0;
@@ -311,7 +316,7 @@ namespace SnakeLadder
                                         }
                                         break;
 
-                                        numTimeFirstPlayerDiceRolled++;
+                                        
                                 }
 
 
